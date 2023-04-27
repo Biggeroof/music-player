@@ -17,6 +17,10 @@ body {
     overflow-y: hidden;
   }
   
+  .bg {
+    background-color: black;
+  }
+
   .sideBar {
     width: 20rem;
     min-height: 100vh;  

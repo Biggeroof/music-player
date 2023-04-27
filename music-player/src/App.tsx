@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className="bg">
+    <div className="bg-home">
       <Hero />
       <SideBar />
       <Playbar />
