@@ -17,12 +17,6 @@ function App() {
     <div className="bg">
       <Hero />
       <SideBar />
-      <List
-        items={items}
-        heading="Playlists"
-        onSelectItem={handleSelectItem}
-        classNames="flex"
-      />
       <Playbar />
     </div>
   );
