@@ -14,15 +14,9 @@ function App() {
   };
 
   return (
-    <div className="bg">
+    <div className="bg-home">
       <Hero />
       <SideBar />
-      <List
-        items={items}
-        heading="Playlists"
-        onSelectItem={handleSelectItem}
-        classNames="flex"
-      />
       <Playbar />
     </div>
   );
