@@ -7,12 +7,6 @@ import Playbar from "./components/Playbar";
 import Hero from "./components/Hero";
 
 function App() {
-  let items = ["playlist 1", "playlist 2"];
-  // const [isPlaying, setIsPlaying] = useState(False)
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  };
-
   return (
     <div className="bg-home">
       <Hero />

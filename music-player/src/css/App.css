@@ -1,3 +1,4 @@
 .bg-home {
     background: linear-gradient(360deg, #1C1C1C 10%, #494949 360%);
+    overflow-y: hidden;
 }

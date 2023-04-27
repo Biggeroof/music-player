@@ -5,6 +5,7 @@ const Playbar = () => {
   let [isPaused, setIsPaused] = useState(true);
   let [shuffleOn, setShfuffleOn] = useState(false);
   let [repeatOn, setRepeatOn] = useState(false);
+  
   return (
     <div className="bg-dark text-center text-lg-start fixed-bottom playbar d-flex justify-content-center">
       <button
