@@ -21,7 +21,7 @@ function ListGroup(props: Props) {
             className={
               selectedIndex === index
                 ? "list-group-item active"
-                : "list-group-item"
+                : "list-group-item bg-dark"
             }
             key={item}
             onClick={() => {
@@ -29,7 +29,7 @@ function ListGroup(props: Props) {
               props.onSelectItem(item);
             }}
           >
-            {item}
+            <p className="text-light">{item}</p>
           </li>
         ))}
       </ul>
