@@ -3,6 +3,7 @@ import "./App.css";
 import List from "./components/List";
 
 function App() {
+<<<<<<< HEAD
   let items = ["playlist 1", "playlist 2"];
   // const [isPlaying, setIsPlaying] = useState(False)
   const handleSelectItem = (item: string) => {
@@ -18,6 +19,14 @@ function App() {
       />
     </div>
   );
+=======
+    useState(0);
+    return (
+        <>
+
+        </>
+    );
+>>>>>>> 0b5152e96e1862b540b63ac654f7485e75c4138b
 }
 
 export default App;
