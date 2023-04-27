@@ -1,7 +1,11 @@
 const Hero = () => {
   return (
-    <div>Hero</div>
-  )
-}
+    <div className="d-flex justify-content-around">
+      <p className="text-light">Hero Hero</p>
+      <p className="text-light">Hero Hero</p>
+      <p className="text-light">Hero Hero</p>
+    </div>
+  );
+};
 
-export default Hero
+export default Hero;
