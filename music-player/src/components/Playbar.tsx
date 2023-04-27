@@ -127,7 +127,10 @@ const Playbar = () => {
           <span className={volumeLabel()} aria-hidden="true"></span>
         </button>
 
-        <section className="text-center centerdiv" aria-label="Left Align">
+        <section
+          className="text-center centerdiv volslider"
+          aria-label="Left Align"
+        >
           <input
             type="range"
             min={0}
