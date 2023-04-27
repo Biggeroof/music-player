@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "../css/playbar.css";
+let volumeBefore = 1;
 
 const Playbar = () => {
   const [isPaused, setIsPaused] = useState(true);
   const [shuffleOn, setShfuffleOn] = useState(false);
   const [repeatOn, setRepeatOn] = useState(false);
-  const [volume, setVolume] = useState(1)
-  const [muted, setMuted] = useState(false)
-  const volumeBefore = !muted ? volume : 0;
-
+  const [volume, setVolume] = useState(1);
+  const [muted, setMuted] = useState(false);
+  volumeBefore = !muted ? volume : volumeBefore;
 
   function volumeLabel() {
     if (volume >= 0.5) {
@@ -18,7 +18,7 @@ const Playbar = () => {
     }
     return "glyphicon glyphicon-volume-off text-light";
   }
-  
+
   return (
     <div className="bg-dark text-center text-lg-start fixed-bottom playbar d-flex justify-content-center">
       <button
@@ -91,7 +91,8 @@ const Playbar = () => {
         aria-label="Left Align"
         onClick={() => {
           setRepeatOn(!repeatOn);
-        }}>
+        }}
+      >
         <span
           className={
             repeatOn
@@ -101,24 +102,20 @@ const Playbar = () => {
           aria-hidden="true"
         ></span>
       </button>
-      
+
       <button
         type="button"
         className="btn btn-default"
         aria-label="Left Align"
         onClick={() => {
-          setMuted(m => !m)
-
+          setMuted((m) => !m);
 
           // make it so when you unmute it goes back to the volume before
-          setVolume(v => (v !== 0 ? 0: volumeBefore))}}>
-        <span
-          className={volumeLabel()}
-          aria-hidden="true"
-        >
-        </span>
+          setVolume((v) => (v !== 0 ? 0 : volumeBefore));
+        }}
+      >
+        <span className={volumeLabel()} aria-hidden="true"></span>
       </button>
-
 
       <section className="text-center" aria-label="Left Align">
         <input
@@ -127,13 +124,11 @@ const Playbar = () => {
           max={1}
           step={0.02}
           value={volume}
-          onChange={event => {
-            setVolume(event.target.valueAsNumber)
+          onChange={(event) => {
+            setVolume(event.target.valueAsNumber);
           }}
         />
-   
       </section>
-
     </div>
   );
 };
