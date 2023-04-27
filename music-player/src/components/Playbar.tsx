@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import '../css/playbar.css'
 
 const Playbar = () => {
   let [isPaused, setIsPaused] = useState(true);
   let [shuffleOn, setShfuffleOn] = useState(false);
   return (
-    <div>
+    <div className="bg-dark text-center text-lg-start fixed-bottom playbar">
       <button
         type="button"
         className="btn btn-default"
