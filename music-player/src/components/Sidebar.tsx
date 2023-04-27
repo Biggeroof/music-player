@@ -1,8 +1,7 @@
 import React from "react";
 import "../css/sidebar.css";
-import List from '../components/List'
+import List from "../components/List";
 const SideBar = () => {
-
   let items = ["Oh my God", "Banana", "Watermelon", "Apple"];
   // const [isPlaying, setIsPlaying] = useState(False)
   const handleSelectItem = (item: string) => {
@@ -13,7 +12,8 @@ const SideBar = () => {
     <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sideBar">
       <a
         href="/"
-        className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+      >
         <svg className="bi me-2" width="40" height="32"></svg>
         <span className="fs-1">Notify</span>
         <br></br>
