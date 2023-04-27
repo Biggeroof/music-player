@@ -17,7 +17,7 @@ const Playbar = () => {
           className={
             shuffleOn
               ? "glyphicon glyphicon-random text-success"
-              : "glyphicon glyphicon-random"
+              : "glyphicon glyphicon-random text-light"
           }
           aria-hidden="true"
         ></span>
@@ -25,7 +25,7 @@ const Playbar = () => {
 
       <button type="button" className="btn btn-default" aria-label="Left Align">
         <span
-          className="glyphicon glyphicon-step-backward"
+          className="glyphicon glyphicon-step-backward text-light"
           aria-hidden="true"
         ></span>
       </button>
@@ -39,7 +39,10 @@ const Playbar = () => {
             setIsPaused(!isPaused);
           }}
         >
-          <span className="glyphicon glyphicon-play" aria-hidden="true"></span>
+          <span
+            className="glyphicon glyphicon-play text-light"
+            aria-hidden="true"
+          ></span>
         </button>
       )}
 
@@ -52,13 +55,16 @@ const Playbar = () => {
             setIsPaused(!isPaused);
           }}
         >
-          <span className="glyphicon glyphicon-pause" aria-hidden="true"></span>
+          <span
+            className="glyphicon glyphicon-pause text-light"
+            aria-hidden="true"
+          ></span>
         </button>
       )}
 
       <button type="button" className="btn btn-default" aria-label="Left Align">
         <span
-          className="glyphicon glyphicon-step-forward"
+          className="glyphicon glyphicon-step-forward text-light"
           aria-hidden="true"
         ></span>
       </button>
