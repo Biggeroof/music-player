@@ -18,17 +18,16 @@ function ListGroup(props: Props) {
       <ul className="list-group">
         {props.items.map((item, index) => (
           <li
-            className="list-group-item"
-            // className={
-            //   selectedIndex === index
-            //     ? "list-group-item active"
-            //     : "list-group-item"
-            // }
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={item}
-            // onClick={() => {
-            //   setSelectedIndex(index);
-            //   props.onSelectItem(item);
-            // }}
+            onClick={() => {
+              setSelectedIndex(index);
+              props.onSelectItem(item);
+            }}
           >
             {item}
           </li>
