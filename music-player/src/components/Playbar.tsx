@@ -76,7 +76,7 @@ const Playbar = () => {
         className="btn btn-default"
         aria-label="Left Align"
         onClick={() => {
-          setRepeatOn(!shuffleOn);
+          setRepeatOn(!repeatOn);
         }}
       >
         <span
