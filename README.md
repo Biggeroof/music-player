@@ -1,4 +1,4 @@
 # sturdy-goggles
 haha very scuffed
 ![image](https://user-images.githubusercontent.com/58992834/234985441-d8205044-41ab-4c4d-a8cd-c752515a735d.png)
-replace player with bassboostplayer in app.tsx for a fun time 😀
+uncomment bassboostplayer and comment player in app.tsx for a fun time 😀
