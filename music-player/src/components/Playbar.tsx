@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import "../css/playbar.css";
+import Playlist from "./Playlist";
+// import Song from "./Song";
 let volumeBefore = 1;
 
-const Playbar = () => {
+interface Props {
+  currentPlaylist: typeof Playlist;
+}
+
+
+const Playbar = ( props: Props) => {
   const [isPaused, setIsPaused] = useState(true);
   const [shuffleOn, setShfuffleOn] = useState(false);
   const [repeatOn, setRepeatOn] = useState(false);
@@ -19,10 +26,12 @@ const Playbar = () => {
     return "glyphicon glyphicon-volume-off text-light";
   }
 
+
+
   return (
     <>
-      <div className="bg-dark text-center text-lg-start fixed-bottom playbar d-flex">
-        <svg className="bi me-2" width="400" height="32"></svg>
+      <div className="bg-dark text-center text-lg-start fixed-bottom playbar d-flex justify-content-center">
+        <svg className="bi me-2" width="40%" height="32"></svg>
         <button
           type="button"
           className="btn btn-default"
@@ -41,6 +50,8 @@ const Playbar = () => {
           ></span>
         </button>
 
+
+
         <button
           type="button"
           className="btn btn-default"
@@ -51,6 +62,25 @@ const Playbar = () => {
             aria-hidden="true"
           ></span>
         </button>
+
+        {/* current song bar */}
+        {/* <section
+          className="text-center centerdiv volslider"
+          aria-label="Left Align"
+        >
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.02}
+            // value={}
+            // onChange={(event) => {
+            //   setVolume(event.target.valueAsNumber);
+            // }}
+          />
+        </section> */}
+
+
 
         {isPaused && (
           <button
@@ -112,7 +142,9 @@ const Playbar = () => {
             aria-hidden="true"
           ></span>
         </button>
-        <svg className="bi me-2" width="200" height="32"></svg>
+        
+        <svg className="bi me-2" width="30%" height="32"></svg>
+
         <button
           type="button"
           className="btn btn-default"
@@ -132,7 +164,7 @@ const Playbar = () => {
           aria-label="Left Align"
         >
           <input
-            type="range"
+            type="range"  
             min={0}
             max={1}
             step={0.02}
