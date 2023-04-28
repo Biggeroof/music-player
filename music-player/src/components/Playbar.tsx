@@ -9,10 +9,8 @@ let volumeBefore = 1;
 //   currentPlaylist: typeof Playlist;
 // }
 
-
 // const Playbar = ( props: Props) => {
 const Playbar = () => {
-
   const [isPaused, setIsPaused] = useState(true);
   const [shuffleOn, setShfuffleOn] = useState(false);
   const [repeatOn, setRepeatOn] = useState(false);
@@ -28,8 +26,6 @@ const Playbar = () => {
     }
     return "glyphicon glyphicon-volume-off text-light";
   }
-
-
 
   return (
     <>
@@ -53,8 +49,6 @@ const Playbar = () => {
           ></span>
         </button>
 
-
-
         <button
           type="button"
           className="btn btn-default"
@@ -66,11 +60,7 @@ const Playbar = () => {
           ></span>
         </button>
 
-        <Player 
-          isPaused={isPaused}
-          repeatOn={repeatOn}
-          volume={volume}
-        />
+        <Player isPaused={isPaused} repeatOn={repeatOn} volume={volume} />
         {/* current song bar */}
         {/* <section
           className="text-center centerdiv volslider"
@@ -87,8 +77,6 @@ const Playbar = () => {
             // }}
           />
         </section> */}
-
-
 
         {isPaused && (
           <button
@@ -150,7 +138,7 @@ const Playbar = () => {
             aria-hidden="true"
           ></span>
         </button>
-        
+
         <svg className="bi me-2" width="30%" height="32"></svg>
 
         <button
@@ -172,7 +160,7 @@ const Playbar = () => {
           aria-label="Left Align"
         >
           <input
-            type="range"  
+            type="range"
             min={0}
             max={1}
             step={0.02}
