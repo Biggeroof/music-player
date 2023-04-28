@@ -72,13 +72,12 @@ const Playbar = () => {
           audioRef={audioRef}
           progressBarRef={progressBarRef}
         />
+
         {/* <BassBoostPlayer
           isPaused={isPaused}
           repeatOn={repeatOn}
           volume={volume}
-          audioRef={audioRef}
-          progressBarRef={progressBarRef}
-        />
+        /> */}
 
         {/* current song bar */}
         {/* <section
