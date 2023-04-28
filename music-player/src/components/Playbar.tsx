@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/playbar.css";
 import Playlist from "./Playlist";
 import Player from "./Player";
+import BassBoostPlayer from "./bassBoostPlayer";
 // import Song from "./Song";
 let volumeBefore = 1;
 
@@ -61,6 +62,11 @@ const Playbar = () => {
         </button>
 
         <Player isPaused={isPaused} repeatOn={repeatOn} volume={volume} />
+        {/* <BassBoostPlayer
+          isPaused={isPaused}
+          repeatOn={repeatOn}
+          volume={volume}
+        /> */}
         {/* current song bar */}
         {/* <section
           className="text-center centerdiv volslider"
