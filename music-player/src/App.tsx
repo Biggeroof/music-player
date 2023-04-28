@@ -5,11 +5,13 @@ import SideBar from "./components/Sidebar";
 import Song from "./components/Song";
 import Playbar from "./components/Playbar";
 import Hero from "./components/Hero";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="bg-home">
-      <Hero />
+      <Nav />
+      {/* <Hero /> */}
       <SideBar />
       <Playbar />
     </div>
