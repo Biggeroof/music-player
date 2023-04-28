@@ -10,12 +10,16 @@ import fetch from "node-fetch";
 
 function App() {
   return (
-    <div className="bg-home">
-      <Nav />
-      {/* <Hero /> */}
-      <SideBar />
-      <Playbar />
-    </div>
+    <>
+      <div className="bg-home">
+        <Nav />
+        {/* <Hero /> */}
+        <SideBar />
+      </div>
+      <div>
+        <Playbar />
+      </div>
+    </>
   );
 }
 
