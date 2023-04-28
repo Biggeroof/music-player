@@ -1,68 +1,83 @@
-import { useEffect, useState } from "react"; 
-import useSound from 'use-sound';
+import { useRef, useEffect, useState } from "react";
+// import useSound from 'use-sound';
+import Playlist from "./Playlist";
+// import '../css/playbar.css';
+import useSound from "use-sound";
 // import Song from "./Song";
-import song from '../images/Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3'
-import song from "../images/Kero Kero Bonito - Flamingo [mega earrape and bass boost]_zmEUpMF-HLE.mp3";
-// Kero Kero Bonito - Flamingo [mega earrape and bass boost]_zmEUpMF-HLE.mp3
-// Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3
+import song from "../images/Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3";
 
-interface Props {
-    // currSong: typeof Song;
-    isPaused: boolean;
-    // setIsPaused: () => void;
-    repeatOn: boolean;
-    // setIsRepeat: () => void;
-    volume: number;
-    // setVolume: () => void;
-}
+// interface Props {
+//     // currPlaylist: typeof Playlist;
+//     isPaused: boolean;
+//     // setIsPaused: () => void;
+//     repeatOn: boolean;
+//     // setIsRepeat: () => void;
+//     volume: number;
+//     audioRef: object;
+//     // pos: number;
+//     // shuffle: boolean;
+//     // setVolume: () => void;
+// }
 
-const Player = (props: Props) => {
+// include current song :)
+const Player = ({ isPaused, repeatOn, volume, audioRef, progressBarRef }) => {
+  const [timeProgress, setTimeProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
 
-    // idk how to this fix... "currSong is any"
-    const [play, { pause, duration, sound}] = useSound(song, volume);
-
-    if (isPaused) {
-        pause();
-    } else {
-        play();
+  const formatTime = (time: number) => {
+    if (time && !isNaN(time)) {
+      const minutes = Math.floor(time / 60);
+      const formatMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+      const seconds = Math.floor(time % 60);
+      const formatSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+      return `${formatMinutes}:${formatSeconds}`;
     }
-    
-    // Keeps track of the current time of the song (min:sec)
-    const [currTime, setCurrTime] = useState({min: 0, sec: 0});
-    
-    // same curr time in secs
-    const [seconds, setSeconds] = useState();
+    return "00:00";
+  };
 
-    let time = {min: 0, sec: 0};
-    // 
-    useEffect(() => {
-        const sec = duration / 1000;
-        const min = Math.floor(sec / 60);
-        const secRemain = Math.floor(sec % 60);
-        const time = {
-          min: min,
-          sec: secRemain
-        }
-    });
+  const onLoadedMetadata = () => {
+    const seconds = audioRef.current.duration;
+    setDuration(seconds);
+    progressBarRef.current.max = seconds;
+  };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-          if (sound) {
-            setSeconds(sound.seek([])); // setting the seconds state with the current state
-            const min = Math.floor(sound.seek([]) / 60);
-            const sec = Math.floor(sound.seek([]) % 60);
-            setCurrTime({
-              min,
-              sec,
-            });
-          }
-        }, 1000);
-        return () => clearInterval(interval);
-      }, [sound]);
+  const handleProgressChange = () => {
+    audioRef.current.currentTime = progressBarRef.current.value;
+  };
 
+  // Keeps track of the current time of the song (min:sec)
+  const [currTime, setCurrTime] = useState({ min: 0, sec: 0 });
 
-    return (
-        <div>
+  // same curr time in secs
+  const [seconds, setSeconds] = useState();
+
+  // pause and play
+  let time = { min: 0, sec: 0 };
+  //
+  useEffect(() => {
+    if (isPaused) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+      const sec = duration / 1000;
+      const min = Math.floor(sec / 60);
+      const secRemain = Math.floor(sec % 60);
+      const time = {
+        min: min,
+        sec: secRemain,
+      };
+    }
+  }, [isPaused, audioRef]);
+
+  useEffect(() => {
+    if (audioRef) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume, audioRef]);
+
+  return (
+    <div>
+      {/* <div className="time">
             <div className="time">
                 <p>
                     {currTime.min}:{currTime.sec}
@@ -70,18 +85,34 @@ const Player = (props: Props) => {
                 <p>
                     {time.min}:{time.sec}
                 </p>
-            </div>
+            </div> */}
+      {/* className="hidden"  */}
+      <audio src={song} ref={audioRef} onLoadedMetadata={onLoadedMetadata} />
+
+      <div className="progress putBotdiv">
+        <span className="time current">{formatTime(timeProgress)}</span>
+        <input
+          type="range"
+          ref={progressBarRef}
+          defaultValue="0"
+          onChange={handleProgressChange}
+        />
+        <span className="time">{formatTime(duration)}</span>
+        {/* <span className="time current">00:00</span> */}
+
+        {/* <span className="time">99:99</span> */}
+      </div>
+      {/* <input
                 <input
                 type="range"
                 min="0"
                 max={duration / 1000}
-                // default="0"
-                value={seconds}
-                className="timeline"
                 onChange={(e) => {
                     sound.seek([e.target.value]);
                 }}
-            />
-        </div>
-    );
-}
+            /> */}
+    </div>
+  );
+};
+
+export default Player;

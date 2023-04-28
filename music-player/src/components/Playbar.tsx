@@ -12,7 +12,6 @@ let volumeBefore = 1;
 
 // const Playbar = ( props: Props) => {
 const Playbar = () => {
-
   // const [trackIndex, setTrackIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
   const [shuffleOn, setShfuffleOn] = useState(false);
@@ -66,7 +65,13 @@ const Playbar = () => {
           ></span>
         </button>
 
-        <Player isPaused={isPaused} repeatOn={repeatOn} volume={volume} />
+        <Player
+          isPaused={isPaused}
+          repeatOn={repeatOn}
+          volume={volume}
+          audioRef={audioRef}
+          progressBarRef={progressBarRef}
+        />
         {/* <BassBoostPlayer
           isPaused={isPaused}
           repeatOn={repeatOn}
