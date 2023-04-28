@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "../css/playbar.css";
 import Playlist from "./Playlist";
 import Player from "./Player";
@@ -13,11 +13,15 @@ let volumeBefore = 1;
 // const Playbar = ( props: Props) => {
 const Playbar = () => {
 
+  // const [trackIndex, setTrackIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
   const [shuffleOn, setShfuffleOn] = useState(false);
   const [repeatOn, setRepeatOn] = useState(false);
   const [volume, setVolume] = useState(1);
   const [muted, setMuted] = useState(false);
+  const audioRef = useRef();
+  const progressBarRef = useRef();
+
   volumeBefore = !muted ? volume : volumeBefore;
 
   function volumeLabel() {
@@ -70,6 +74,8 @@ const Playbar = () => {
           isPaused={isPaused}
           repeatOn={repeatOn}
           volume={volume}
+          audioRef={audioRef}
+          progressBarRef={progressBarRef}
         />
         {/* current song bar */}
         {/* <section
