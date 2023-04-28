@@ -6,12 +6,7 @@ import Song from "./components/Song";
 import Playbar from "./components/Playbar";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
-import fetch from 'node-fetch';
-
-
-
-
-
+import fetch from "node-fetch";
 
 function App() {
   return (

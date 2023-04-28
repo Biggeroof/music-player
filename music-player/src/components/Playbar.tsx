@@ -2,13 +2,13 @@ import React, { useRef, useState } from "react";
 import "../css/playbar.css";
 import Playlist from "./Playlist";
 import Player from "./Player";
+import BassBoostPlayer from "./bassBoostPlayer";
 // import Song from "./Song";
 let volumeBefore = 1;
 
 // interface Props {
 //   currentPlaylist: typeof Playlist;
 // }
-
 
 // const Playbar = ( props: Props) => {
 const Playbar = () => {
@@ -33,8 +33,6 @@ const Playbar = () => {
     return "glyphicon glyphicon-volume-off text-light";
   }
 
-
-
   return (
     <>
       <div className="bg-dark text-center text-lg-start fixed-bottom playbar d-flex justify-content-center">
@@ -57,8 +55,6 @@ const Playbar = () => {
           ></span>
         </button>
 
-
-
         <button
           type="button"
           className="btn btn-default"
@@ -70,13 +66,15 @@ const Playbar = () => {
           ></span>
         </button>
 
-        <Player 
+        <Player isPaused={isPaused} repeatOn={repeatOn} volume={volume} />
+        {/* <BassBoostPlayer
           isPaused={isPaused}
           repeatOn={repeatOn}
           volume={volume}
           audioRef={audioRef}
           progressBarRef={progressBarRef}
         />
+
         {/* current song bar */}
         {/* <section
           className="text-center centerdiv volslider"
@@ -93,8 +91,6 @@ const Playbar = () => {
             // }}
           />
         </section> */}
-
-
 
         {isPaused && (
           <button
@@ -156,7 +152,7 @@ const Playbar = () => {
             aria-hidden="true"
           ></span>
         </button>
-        
+
         <svg className="bi me-2" width="30%" height="32"></svg>
 
         <button
@@ -178,7 +174,7 @@ const Playbar = () => {
           aria-label="Left Align"
         >
           <input
-            type="range"  
+            type="range"
             min={0}
             max={1}
             step={0.02}
