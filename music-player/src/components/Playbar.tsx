@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "../css/playbar.css";
 import Playlist from "./Playlist";
+import Player from "./Player";
 // import Song from "./Song";
 let volumeBefore = 1;
 
-interface Props {
-  currentPlaylist: typeof Playlist;
-}
+// interface Props {
+//   currentPlaylist: typeof Playlist;
+// }
 
 
-const Playbar = ( props: Props) => {
+// const Playbar = ( props: Props) => {
+const Playbar = () => {
+
   const [isPaused, setIsPaused] = useState(true);
   const [shuffleOn, setShfuffleOn] = useState(false);
   const [repeatOn, setRepeatOn] = useState(false);
@@ -63,6 +66,11 @@ const Playbar = ( props: Props) => {
           ></span>
         </button>
 
+        <Player 
+          isPaused={isPaused}
+          repeatOn={repeatOn}
+          volume={volume}
+        />
         {/* current song bar */}
         {/* <section
           className="text-center centerdiv volslider"
