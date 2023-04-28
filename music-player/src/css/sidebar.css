@@ -23,7 +23,8 @@ main {
 
 .sideBar {
   width: 20rem;
-  min-height: 100vh;  
+  height: 90vh;  
+  margin: 0;
 }
 
 .bi {
