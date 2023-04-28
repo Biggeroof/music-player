@@ -3,6 +3,7 @@ import useSound from "use-sound";
 // import Song from "./Song";
 import song from "../images/Kero Kero Bonito - Flamingo [mega earrape and bass boost]_zmEUpMF-HLE.mp3";
 // Kero Kero Bonito - Flamingo [mega earrape and bass boost]_zmEUpMF-HLE.mp3
+// Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3
 
 interface Props {
   // currSong: typeof Song;
