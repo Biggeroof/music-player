@@ -1,0 +1,15 @@
+{
+    "title": "Playlist 1",
+    "songs": [
+        {  
+            "title": "Legends Never Die (ft. Against The Current)",
+            "src": "Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3",
+            "artist": "League og Legends"
+        },
+        {
+            "title": "Flamingo",
+            "src": "Kero Kero Bonito - Flamingo [mega earrape and bass boost]_zmEUpMF-HLE.mp3",
+            "artist": "Kero Kero Binito"
+        }
+    ]
+}
