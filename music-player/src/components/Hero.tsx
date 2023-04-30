@@ -1,10 +1,17 @@
 const Hero = () => {
   return (
-    <div className="d-flex justify-content-around">
-      <p className="text-light">Hero Hero</p>
-      <p className="text-light">Hero Hero</p>
-      <p className="text-light">Hero Hero</p>
-    </div>
+    <>
+      <div className="d-flex justify-content-around">
+        <p> Thumbnail</p>
+        
+      </div>
+      <div className="d-flex justify-content-around">
+        <p className="text-light">Hero Hero</p>
+        <p className="text-light">Hero Hero</p>
+        <p className="text-light">Hero Hero</p>
+      </div>
+    </>
+   
   );
 };
 
