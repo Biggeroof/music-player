@@ -1,12 +1,23 @@
 import React from "react";
 import "../css/sidebar.css";
-import List from "../components/List";
+import List from "./List";
 import notify from "../images/notify.png";
+import importAll from "../importAll";
+
 
 const SideBar = () => {
-  let items = ["Oh my God", "Banana", "Watermelon", "Apple"];
+
+  //  this is wrong LOL
+  const playlists = importAll(require.context('./playlist', false, /\.json$/));
+  console.log(playlists);
+
+
+
+  // let items = ["Oh my God", "Banana", "Watermelon", "Apple"];
+
+  
   // const [isPlaying, setIsPlaying] = useState(False)
-  const handleSelectItem = (item: string) => {
+  const handleSelectItem = (item) => {
     console.log(item);
   };
 
@@ -22,7 +33,7 @@ const SideBar = () => {
         <br></br>
       </a>
       <List
-        items={items}
+        items={() => {}}
         heading="Playlists"
         onSelectItem={handleSelectItem}
         classNames="flex"
