@@ -13,8 +13,10 @@ function App() {
     <>
       <div className="bg-home">
         <Nav />
-        {/* <Hero /> */}
+      </div>
+      <div className="bg-home flex d-flex justify-content-star">
         <SideBar />
+        <Hero />
       </div>
       <div>
         <Playbar />

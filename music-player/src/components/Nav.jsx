@@ -44,8 +44,7 @@ const Nav = () => {
           Search
         </button>
       </form>
-      {urlResult && <a href={urlResult} target="_blank" className="btn btn-outline-success">Download MP3</a>}
-
+      {urlResult && <a href={urlResult} target="_blank" className="btn btn-outline-success" download='true' onClick={console.log('a')}>Download MP3</a>}
     </div>
   );
 };
