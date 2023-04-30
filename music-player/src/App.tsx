@@ -9,7 +9,6 @@ import Nav from "./components/Nav";
 import fetch from "node-fetch";
 
 function App() {
-
   // const allPlaylist = Promise.all();
 
   // const [currPlaylist, setCurrtPlaylist] = useState(playlist[0]);
@@ -21,7 +20,7 @@ function App() {
       </div>
       <div className="bg-home flex d-flex justify-content-star">
         <SideBar />
-        {/* <Hero currPlaylist={currPlaylist}/> */}
+        {/* <Hero currPlaylist={currPlaylist} /> */}
       </div>
       <div>
         <Playbar />

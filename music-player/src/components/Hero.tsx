@@ -3,8 +3,8 @@ import Home from "../pages/Home";
 import PlaylistTab from "../pages/PlaylistTab";
 import "../css/hero.css";
 
-const Hero = () => {
-  const [isHome, setIsHome] = useState(true);
+const Hero = ({ currPlaylist: Playlist }) => {
+  const [isHome, setIsHome] = useState(false);
 
   return (
     <>
@@ -20,8 +20,9 @@ const Hero = () => {
           aria-hidden="true"
         ></span>
       </button>
-      {isHome && <Home />}
-      {!isHome && <PlaylistTab />}
+      <PlaylistTab currPlaylist={currPlaylist} />
+      {/* {isHome && <Home />}
+      {!isHome && <PlaylistTab />} */}
     </>
   );
 };
