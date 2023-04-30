@@ -1,15 +1,14 @@
+import { useState } from "react";
+import Home from "../pages/Home";
+import PlaylistTab from "../pages/PlaylistTab";
+
 const Hero = () => {
+  const [isHome, setIsHome] = useState(true);
+
   return (
     <>
-      <div className="d-flex justify-content-around">
-        <p> Thumbnail</p>
-        
-      </div>
-      <div className="d-flex justify-content-around">
-        <p className="text-light">Hero Hero</p>
-        <p className="text-light">Hero Hero</p>
-        <p className="text-light">Hero Hero</p>
-      </div>
+      {isHome && <Home />}
+      {!isHome && <PlaylistTab />}
     </>
    
   );
