@@ -7,11 +7,6 @@ import importAll from "../importAll";
 
 const SideBar = () => {
 
-  //  this is wrong LOL
-  var requireContext = require('require-context');
-  const playlists = importAll(require.context('./playlist', false, /\.json$/));
-  console.log(playlists);
-
 
 
   // let items = ["Oh my God", "Banana", "Watermelon", "Apple"];

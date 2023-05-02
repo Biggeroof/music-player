@@ -7,11 +7,6 @@ import importAll from '../importAll'
 const Hero = ({ currPlaylist: Playlist }) => {
   const [isHome, setIsHome] = useState(false);
 
-  var requireContext = require('require-context');
-
-  const playlists = importAll(require.context('./images', false, '/\.png/'));
-
-
   return(
     <>
       <button
