@@ -2,9 +2,15 @@ import { useState } from "react";
 import Home from "../pages/Home";
 import PlaylistTab from "../pages/PlaylistTab";
 import "../css/hero.css";
+import importAll from '../importAll'
 
 const Hero = ({ currPlaylist: Playlist }) => {
   const [isHome, setIsHome] = useState(false);
+
+  var requireContext = require('require-context');
+
+  const playlists = importAll(require.context('./images', false, '/\.png/'));
+
 
   return(
     <>
