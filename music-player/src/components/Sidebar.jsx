@@ -9,7 +9,8 @@ import importAll from "../importAll";
 const SideBar = () => {
 
   //  this is wrong LOL
-  const playlists = importAll();
+  var requireContext = require('require-context');
+  const playlists = importAll(require.context('./playlist', false, /\.json$/));
   console.log(playlists);
 
   // const [currPlaylist, setCurrPlaylist] = useState(playlist[0]);
