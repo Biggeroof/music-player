@@ -1,24 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/sidebar.css";
 import List from "./List";
 import notify from "../images/notify.png";
 import importAll from "../importAll";
 
 
+
 const SideBar = () => {
 
   //  this is wrong LOL
-  const playlists = importAll(require.context('./playlist', false, /\.json$/));
+  const playlists = importAll();
   console.log(playlists);
 
-
+  // const [currPlaylist, setCurrPlaylist] = useState(playlist[0]);
 
   // let items = ["Oh my God", "Banana", "Watermelon", "Apple"];
 
-  
   // const [isPlaying, setIsPlaying] = useState(False)
   const handleSelectItem = (item) => {
     console.log(item);
+    setCurrPlaylist(item);
   };
 
   return (
