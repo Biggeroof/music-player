@@ -21,7 +21,7 @@ const Hero = ({ currPlaylist: Playlist }) => {
           aria-hidden="true"
         ></span>
       </button>
-      <PlaylistTab currPlaylist={currPlaylist} />
+      {/* <PlaylistTab currPlaylist={currPlaylist} /> */}
       {/* {isHome && <Home />}
       {!isHome && <PlaylistTab />} */}
     </>
