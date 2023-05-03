@@ -1,10 +1,11 @@
 import { useRef, useEffect, useState } from "react";
 // import useSound from 'use-sound';
 import Playlist from "./Playlist";
+import Song from "./currSong";
 // import '../css/playbar.css';
-import useSound from "use-sound";
 // import Song from "./Song";
 import song from "../images/Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3";
+const ABSOLUTE_PATH = "/src/images/";
 
 // interface Props {
 //     // currPlaylist: typeof Playlist;
@@ -20,7 +21,7 @@ import song from "../images/Legends Never Die (ft. Against The Current) [OFFICIA
 // }
 
 // include current song :)
-const Player = ({ isPaused, repeatOn, volume, audioRef, progressBarRef }) => {
+const Player = ({ currSong, isPaused, repeatOn, volume, audioRef, progressBarRef }) => {
   const [timeProgress, setTimeProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
@@ -87,7 +88,7 @@ const Player = ({ isPaused, repeatOn, volume, audioRef, progressBarRef }) => {
                 </p>
             </div> */}
       {/* className="hidden"  */}
-      <audio src={song} ref={audioRef} onLoadedMetadata={onLoadedMetadata} />
+      <audio src={ ABSOLUTE_PATH + currSong.src } ref={audioRef} onLoadedMetadata={onLoadedMetadata} />
 
       <div className="progress putBotdiv">
         <span className="time current">{formatTime(timeProgress)}</span>

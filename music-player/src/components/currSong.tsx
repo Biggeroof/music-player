@@ -1,4 +1,3 @@
-
 interface Props {
   title: string;
   src: string;
@@ -6,10 +5,8 @@ interface Props {
   // thumbnail: string; (if we can find it :sob:)
 }
 
-const Song = ( props: Props ) => {
-  return (
-    <div>Song</div>
-  )
+const currSong = ( props: Props ) => {
+  return <div></div>;
 }
 
-export default Song
+export default currSong

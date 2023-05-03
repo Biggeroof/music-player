@@ -2,12 +2,14 @@ import React, { useRef, useState } from "react";
 import "../css/playbar.css";
 import Playlist from "./Playlist";
 import Player from "./Player";
-import BassBoostPlayer from "./bassBoostPlayer";
-// import Song from "./Song";
+// import BassBoostPlayer from "./bassBoostPlayer";
+let currSong = {title: "Legends Never Die (ft. Against The Current)",
+                src: "../images/Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3",
+                artist: "League of Legends" };
 let volumeBefore = 1;
-
 // interface Props {
 //   currentPlaylist: typeof Playlist;
+//   index: number;
 // }
 
 // const Playbar = ( props: Props) => {
@@ -20,6 +22,7 @@ const Playbar = () => {
   const [muted, setMuted] = useState(false);
   const audioRef = useRef();
   const progressBarRef = useRef();
+  // const [indexNow, setCindexNow] = useState(index);
 
   volumeBefore = !muted ? volume : volumeBefore;
 
@@ -58,6 +61,13 @@ const Playbar = () => {
           type="button"
           className="btn btn-default"
           aria-label="Left Align"
+          // onClick={() => {
+          //   if (indexNow > 0) {
+          //     setIndexNow(indexNow - 1);
+          //   } else {
+          //     estIndexNow(props.playlist.length - 1);
+          //   }
+          // }}
         >
           <span
             className="glyphicon glyphicon-step-backward text-light"
@@ -66,6 +76,8 @@ const Playbar = () => {
         </button>
 
         <Player
+          currSong={currSong} // make this just an index number later
+          // playlist={props}
           isPaused={isPaused}
           repeatOn={repeatOn}
           volume={volume}
@@ -132,6 +144,13 @@ const Playbar = () => {
           type="button"
           className="btn btn-default"
           aria-label="Left Align"
+          // onClick={() => {
+          //   if (indexNow < props.playlist.length - 1) {
+          //     setIndexNow(indexNow + 1);
+          //   } else {
+          //     estIndexNow(0);
+          //   }
+          // }}
         >
           <span
             className="glyphicon glyphicon-step-forward text-light"
