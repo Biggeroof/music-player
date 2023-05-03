@@ -1,4 +1,4 @@
-import Song from "./currSong";
+import Song from "./Song";
 
 interface Props {
   playlist: [typeof Song];

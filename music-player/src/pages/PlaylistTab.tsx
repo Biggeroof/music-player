@@ -1,16 +1,19 @@
 import { useState } from "react";
 import Playlist from "../components/Playlist";
 import Playbar from "../components/Playbar";
-import { importAll } from "../importAll";
+import { importAllo } from "../utils";
 
-const PlaylistTab = () => {
+interface Props {
+  playlist: typeof Playlist;
+}
+const PlaylistTab = (prop: Props) => {
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
 
   // fill with a local testing playlist
-  console.log(importAll());
-  const playlist = importAll();
+  const playlist = prop.playlist;
+  console.log(playlist);
   // const playlist = {
   //   title: "Playlist 1",
   //   songs: [

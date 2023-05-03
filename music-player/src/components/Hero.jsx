@@ -3,10 +3,13 @@ import Home from "../pages/Home";
 import PlaylistTab from "../pages/PlaylistTab";
 import "../css/hero.css";
 import Playbar from "./Playbar"
-// import importAll from '../importAll'
+import { importAllo } from '../utils'
+let playlist = importAllo();
 
 const Hero = () => {
+  console.log(playlist)
   const [isHome, setIsHome] = useState(false);
+  const [currIndex, setCurrIndex] = useState(0);
 
   return(
     <>
@@ -23,7 +26,7 @@ const Hero = () => {
         ></span>
       </button>
       {isHome && <Home />}
-      {!isHome && <PlaylistTab />}
+      {!isHome && <PlaylistTab playlist={playlist[currIndex]} />}
     </>
   );
 };
