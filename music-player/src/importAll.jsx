@@ -1,7 +1,7 @@
 import masterPlaylist from './playlists/master.json'
 export default function importAll(){
     let playlists = {}
-    fetch(masterPlaylist)
+    fetch('/src/playlists/master.json')
     .then(
         (response) => {
             if (response.status !== 200)  {
