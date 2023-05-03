@@ -2,9 +2,10 @@ import { useState } from "react";
 import Home from "../pages/Home";
 import PlaylistTab from "../pages/PlaylistTab";
 import "../css/hero.css";
-import importAll from '../importAll'
+import Playbar from "./Playbar"
+// import importAll from '../importAll'
 
-const Hero = ({ currPlaylist: Playlist }) => {
+const Hero = () => {
   const [isHome, setIsHome] = useState(false);
 
   return(
@@ -21,9 +22,14 @@ const Hero = ({ currPlaylist: Playlist }) => {
           aria-hidden="true"
         ></span>
       </button>
+<<<<<<< HEAD
       {/* <PlaylistTab currPlaylist={currPlaylist} /> */}
       {/* {isHome && <Home />}
       {!isHome && <PlaylistTab />} */}
+=======
+      {isHome && <Home />}
+      {!isHome && <PlaylistTab />}
+>>>>>>> 99749aa65dfbb8dde7f9318ec1a071d45dbf3002
     </>
   );
 };

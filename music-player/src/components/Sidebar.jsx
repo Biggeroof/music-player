@@ -8,6 +8,14 @@ import importAll from "../importAll";
 
 const SideBar = () => {
 
+<<<<<<< HEAD
+=======
+  //  this is wrong LOL
+  // var requireContext = require('require-context');
+  // const playlists = importAll(require.context('./playlist', false, /\.json$/));
+  // console.log(playlists);
+
+>>>>>>> 99749aa65dfbb8dde7f9318ec1a071d45dbf3002
   // const [currPlaylist, setCurrPlaylist] = useState(playlist[0]);
 
   let items = ["Oh my God", "Banana", "Watermelon", "Apple"];
@@ -15,7 +23,6 @@ const SideBar = () => {
   const [isPlaying, setIsPlaying] = useState(false)
   const handleSelectItem = (item) => {
     console.log(item);
-    setCurrPlaylist(item);
   };
 
   return (
@@ -30,7 +37,11 @@ const SideBar = () => {
         <br></br>
       </a>
       <List
+<<<<<<< HEAD
         items= {items}
+=======
+        items={items}
+>>>>>>> 99749aa65dfbb8dde7f9318ec1a071d45dbf3002
         heading="Playlists"
         onSelectItem={handleSelectItem}
         classNames="flex"
