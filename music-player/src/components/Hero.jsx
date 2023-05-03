@@ -22,14 +22,8 @@ const Hero = () => {
           aria-hidden="true"
         ></span>
       </button>
-<<<<<<< HEAD
-      {/* <PlaylistTab currPlaylist={currPlaylist} /> */}
-      {/* {isHome && <Home />}
-      {!isHome && <PlaylistTab />} */}
-=======
       {isHome && <Home />}
       {!isHome && <PlaylistTab />}
->>>>>>> 99749aa65dfbb8dde7f9318ec1a071d45dbf3002
     </>
   );
 };

@@ -7,11 +7,8 @@ import Playbar from "./components/Playbar";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
 import fetch from "node-fetch";
-import importAll from "./importAll";
 
 function App() {
-  let playlists = importAll();
-  console.log(playlists);
   return (
     <>
       <div className="bg-home">
