@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Playlist from "../components/Playlist";
 import Playbar from "../components/Playbar";
-import importAll from "../importAll";
+import { importAll } from "../importAll";
 
 const PlaylistTab = () => {
   const handleSelectItem = (item: string) => {
