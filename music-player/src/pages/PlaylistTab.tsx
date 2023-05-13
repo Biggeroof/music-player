@@ -12,23 +12,23 @@ const PlaylistTab = (prop: Props) => {
   };
 
   // fill with a local testing playlist
-  const playlist = prop.playlist;
-  console.log(playlist);
-  // const playlist = {
-  //   title: "Playlist 1",
-  //   songs: [
-  //     {
-  //       title: "Legends Never Die (ft. Against The Current)",
-  //       src: "../images/Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3",
-  //       artist: "League of Legends",
-  //     },
-  //     {
-  //       title: "Flamingo",
-  //       src: "../images/Kero Kero Bonito - Flamingo [mega earrape and bass boost]_zmEUpMF-HLE.mp3",
-  //       artist: "Kero Kero Binito",
-  //     },
-  //   ],
-  // };
+  // const playlist = prop.playlist;
+  // console.log(playlist);
+  const playlist = {
+    title: "Playlist 1",
+    songs: [
+      {
+        title: "Legends Never Die (ft. Against The Current)",
+        src: "../images/Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.mp3",
+        artist: "League of Legends",
+      },
+      {
+        title: "Flamingo",
+        src: "../images/Kero Kero Bonito - Flamingo [mega earrape and bass boost]_zmEUpMF-HLE.mp3",
+        artist: "Kero Kero Binito",
+      },
+    ],
+  };
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [currSong, setCurrSong] = useState(playlist.songs[0]);

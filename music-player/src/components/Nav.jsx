@@ -15,7 +15,7 @@ const Nav = () => {
       url: 'https://youtube-mp36.p.rapidapi.com/dl',
       headers: {
         'content-type': 'application/octet-stream',
-        'X-RapidAPI-Key': '8fbd33d484msha19bf509317fa2bp19fc59jsn6bef03575815',
+        'X-RapidAPI-Key': 'abc123',
         'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
       },
       params: {
