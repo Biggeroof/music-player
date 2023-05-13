@@ -1,4 +1,2 @@
-# sturdy-goggles
-haha very scuffed
-![image](https://user-images.githubusercontent.com/58992834/234985441-d8205044-41ab-4c4d-a8cd-c752515a735d.png)
-uncomment bassboostplayer and comment player in components/playbar.tsx for a fun time 😀
+# music-player
+Work in progress music player that was written using react, you can download songs into mp3s (you'll need a api key to put into the parameters so you can request) and import them into the app (this part is a work in progress). Play pause and playback functionality works.
